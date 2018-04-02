@@ -1,0 +1,133 @@
+Make sure that parents are not being added to a level that they shouldn't be. 
+- checked for any duplicates in array which holds indexes of all visited 
+  parents. (check)
+- don't add new_children's index if it has been added already.
+- only call find_room if that room's index is not already in game->duplicate
+-can we add new_children[j] that is the current child
+
+
+This will complete creating a structure for breadth first search
+
+
+                      1
+       3                2
+            4    5     7
+
+
+
+
+
+
+
+
+
+
+
+
+BACKTRACKING
+-start at end and traverse to find the start
+-find end's parents till you reach 
+-loop through game->room_data and find game->parents then search for end and start at it.
+DONE
+
+-traverse back from the beginning√√
+-print first and last index inclusive√√
+-print the names of those indexes√√
+-move one ant at a time to a room
+L(ant no.)-(room name)
+-norme
+
+
+
+
+
+
+- loop through 50 ants starting at ant #1
+- move it to first room
+
+
+
+
+
+
+
+if you have N ants, step by step move the ants, so basically:
+
+Move the first ant only, then move the second and first and, then move the third and second and first ants....etc.
+
+
+First make a struct called ant.
+Array = [1, 2, 3, 4];
+Each ant will have a current position, and then if you say 
+t_ant *create_ant(void)
+{
+  t_ant *tmp;
+
+  tmp = malloc it;
+  //Have position stor the roome names.
+  tmp->ppos = 0
+  tmp->pos = game start index;
+  //0 = Idle, 1 = moving, 2 = finisehd
+  tmp->status = 
+  return the tmp ant.
+}
+
+void move_ants(array of all the ants)
+{
+  loop through all the ants:
+    run move_ant on the first idle ant it finds
+    and run move_and on all the rest of the moving ants
+}
+void move_ant(t_ant *ant)
+{
+  update the current position of the ant passed in to to one more in the path.
+  and update the ppos.
+  To get the next position, just loop through the path array to find the current position, and then return the position to the right
+  of the current.
+  
+  Then, if the current pos is the end, then label the ant as finishined.
+}
+
+void print_ants(an array of the ants)
+{
+  loop through all the ants, and check if the status is not idle or finished
+  -> print out
+  If it's moving then print the status of the ant, so the position it was at, and then the position it's at now
+}
+
+func(){
+while looping through total ants ARRAY
+
+ARRAY[ant index] = create it's data by calling 
+}
+
+moving ant
+{
+  -use the current pos by incrementing it to the next pos
+  -at the same time, update the ants prev pos but the first move is the exception when you keep the pos at
+  the starting index
+  - so for the first move set status at 0
+  -loop through to path array to find the current position while incrementing current and previous
+  -only update previous pos after current postiion moves the second time
+  -complete when found the end
+}
+
+move ants
+{
+  loop through the array of ants
+  if status is 0 then call move ant
+  call move ant
+}
+
+-norme
+-no solution√√√√√√
+-printing
+
+
+
+      
+
+
+    
+
+[COMPLETE.]
