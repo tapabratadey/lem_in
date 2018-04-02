@@ -119,11 +119,11 @@ void			parents_for_room_two(t_game *game, int i, int j, int
 				**new_parents);
 void			parents_for_room_one(t_game *game, int i, int j, int
 				**new_parents);
-void			check_for_children_room_one(int i, int j, t_game *game,
+void			check_for_children_room_one(int i, int *j, t_game *game,
 				int **new_parents);
-void			check_for_children_room_two(int i, int j, t_game *game,
+void			check_for_children_room_two(int i, int *j, t_game *game,
 				int **new_parents);
-void			check_if_visited(int i, int j, t_game *game, int
+void			check_if_visited(int i, int *j, t_game *game, int
 				**new_parents);
 void			printing(t_ant *ant);
 void			store_links(int i, t_game *game, char **temp);

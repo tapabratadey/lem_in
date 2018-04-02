@@ -26,7 +26,7 @@ void	get_new_parents(t_game *game, int **new_parents)
 		i = 0;
 		while (i < game->link_counter)
 		{
-			check_if_visited(i, j, game, new_parents);
+			check_if_visited(i, &j, game, new_parents);
 			i++;
 		}
 		game->parent_i++;
@@ -36,7 +36,7 @@ void	get_new_parents(t_game *game, int **new_parents)
 	*new_parents = game->new_children;
 }
 
-void	check_if_visited(int i, int j, t_game *game, int **new_parents)
+void	check_if_visited(int i, int *j, t_game *game, int **new_parents)
 {
 	if (game->link_data[i]->has_been_visited == 0)
 	{
@@ -69,7 +69,7 @@ void	check_for_dup(t_game *game)
 	}
 }
 
-void	check_for_children_room_one(int i, int j, t_game *game,
+void	check_for_children_room_one(int i, int *j, t_game *game,
 		int **new_parents)
 {
 	if (ft_strcmp(game->link_data[i]->room_one, game->room_data[(*new_parents)
@@ -78,13 +78,13 @@ void	check_for_children_room_one(int i, int j, t_game *game,
 		if (check_then_add(find_room(game, game->link_data[i]->room_two),
 					game) == 1)
 		{
-			parents_for_room_one(game, i, j, new_parents);
-			j++;
+			parents_for_room_one(game, i, *j, new_parents);
+			(*j)++;
 		}
 	}
 }
 
-void	check_for_children_room_two(int i, int j, t_game *game,
+void	check_for_children_room_two(int i, int *j, t_game *game,
 		int **new_parents)
 {
 	if (ft_strcmp(game->link_data[i]->room_two, game->room_data[(*new_parents)
@@ -93,8 +93,8 @@ void	check_for_children_room_two(int i, int j, t_game *game,
 		if (check_then_add(find_room(game, game->link_data[i]->room_one),
 					game) == 1)
 		{
-			parents_for_room_two(game, i, j, new_parents);
-			j++;
+			parents_for_room_two(game, i, *j, new_parents);
+			(*j)++;
 		}
 	}
 }
