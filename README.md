@@ -1,5 +1,7 @@
 # Lem-in
-![DEMO] (https://user-images.githubusercontent.com/12387917/43361458-dddb759e-9283-11e8-8779-d5bb626b31d2.gif)
+
+![DEMO](https://user-images.githubusercontent.com/12387917/43361458-dddb759e-9283-11e8-8779-d5bb626b31d2.gif)
+
 Steps to run Lem-in:</br>
 Copy and paste the following line in your terminal</br>
 
